@@ -1,0 +1,77 @@
+{% extends 'codecraftapp/base.html' %}
+{% load i18n %}
+
+
+{% block title %}
+Projects
+{% endblock %}
+
+
+{% block content %}
+<section class="pageHeader">
+    <div class="container">
+        <div class="pageHeader-item">
+            <ul>
+                <li><a href="{% url 'home' %}"> <span>{% trans  "Asosiy sahifa" %}</span> <i class="icon-bottom"></i></a></li>
+                <li><a href=""> <span>{% trans  "Loyihalar" %}</span> <i class="icon-bottom"></i></a></li>
+            </ul>
+            <h1>{% trans  "Loyihalar" %}</h1>
+        </div>
+    </div>
+</section>
+<section class="projects">
+    <div class="container">
+        <ul class="btn-list">
+
+            {% for p_c in categories %}
+            {% if project_category and p_c.pk == project_category.pk %}
+            <li class="btn-list__item">
+                <button class="btn active">{{ p_c.title }}</button>
+            </li>
+            {% else %}
+            <li class="btn-list__item">
+                <a class="btn" href="{{ p_c.get_absolute_url }}">{{ p_c.title }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+
+        </ul>
+
+        <div class="projects-list">
+            {% for p in projects %}
+            <div class="projects-list__item">
+                {% if p.id|divisibleby:2 == True %}
+                <div class="project-img">
+                    <img src="{{p.image.url}}" alt=""/>
+                </div>
+                {% endif %}
+                <div class="project-content">
+                    <h2 class="project__name">{{p.title}}</h2>
+                    <p>
+                        {{p.description|linebreaks}}
+                    </p>
+
+                    <a class="show-project" href="{{p.url}}">Loyihani ko‘rish </a>
+
+                    <ul class="technogy-list">
+                        {% for t in p.technologies.all %}
+                        <li>
+                            <img class="project-icon" src="{{t.icon.url}}" alt="Python"/>
+                            <span>{{t.name}}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% if p.id|divisibleby:2 == False %}
+                <div class="project-img">
+                    <img src="{{p.image.url}}" alt=""/>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="line"></div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

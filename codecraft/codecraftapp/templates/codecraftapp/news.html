@@ -1,0 +1,52 @@
+{% extends 'codecraftapp/base.html' %}
+{% load i18n %}
+
+{% block title %}
+News
+{% endblock %}
+
+
+{% block content %}
+<section class="pageHeader">
+    <div class="container">
+        <div class="pageHeader-item">
+            <ul>
+                <li><a href="{% url 'home' %}"> <span>{% trans "Asosiy sahifa" %}</span> <i class="icon-bottom"></i></a></li>
+                <li><a href="#"> <span>{% trans "Yangiliklar" %}</span> <i class="icon-bottom"></i></a></li>
+            </ul>
+            <h1>{% trans "Yangiliklar" %}</h1>
+        </div>
+    </div>
+</section>
+<section class="news">
+    <div class="container">
+        <div class="container2">
+            <div class="news-item__blocks">
+                <div class="row">
+                    {% for n in news %}
+                    <div class="col-4">
+                        <a href="{{n.get_absolute_url}}">
+                            <div class="block">
+                                <div class="image">
+                                    <img src="{{n.photo.url}}" alt="{{n.title}} photo">
+                                </div>
+                                <div class="block__content">
+                                    <h2>{{n.title}}</h2>
+                                    <p>
+                                        {{n.content|truncatechars:185}}
+                                    </p>
+                                    <div>
+                                        <p><i class="icon-instagram"></i> <span>{{n.created_time|date:"d.m.Y"}}</span></p>
+<!--                                        <p><i class="icon-instagram"></i> <span>12</span></p>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,183 @@
+{% extends 'codecraftapp/base.html' %}
+{% load static %}
+{% load i18n %}
+
+
+{% block title %}
+About
+{% endblock %}
+
+
+{% block content %}
+<section class="pageHeader">
+    <div class="container">
+        <div class="pageHeader-item">
+            <ul>
+                <li><a href="{% url 'home' %}"> <span>{% trans "Asosiy sahifa" %}</span> <i class="icon-bottom"></i></a></li>
+                <li><a href="#"> <span>{% trans "Biz haqimizda" context 'menu' %}</span> <i class="icon-bottom"></i></a></li>
+            </ul>
+            <h1>{% trans "Biz haqimizda" context 'heading' %}</h1>
+        </div>
+    </div>
+</section>
+<section class="pageVideo">
+    <div class="container">
+        <div class="container2">
+            <div class="pageVideo-item">
+<!--                <a href="https://www.youtube.com/watch?v=s3EyW4UIHLo" class="video">-->
+<!--                    <div class="image">-->
+<!--                        <img src="{% static '/image/pageVideo.jpg' %}" alt="">-->
+<!--                    </div>-->
+<!--                    <div class="video__play">-->
+<!--                        <div><i class="icon-play"></i></div>-->
+<!--                    </div>-->
+<!--                </a>-->
+
+<!-- Video tugmasi -->
+                    <a href="#" class="video" data-bs-toggle="modal" data-bs-target="#videoModal" data-video-url="https://www.youtube.com/embed/s3EyW4UIHLo">
+                        <div class="image">
+                            <img src="{% static 'image/pageVideo.jpg' %}" alt="">
+                        </div>
+                        <div class="video__play">
+                            <div><i class="icon-play"></i></div>
+                        </div>
+                    </a>
+
+<!-- Modal oyna -->
+                    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" style="max-width: 900px; width: 90%;">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="videoModalLabel">Video</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <iframe id="videoFrame" style="width: 100%; height: 500px;" src="" frameborder="0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                <p>
+                    {% blocktrans %}
+                    Biz haqimizda
+Codecraft IT o‘quv markazi – bu zamonaviy texnologiyalar bo‘yicha sifatli ta’lim berishga ixtisoslashgan markaz bo‘lib, dasturlash, dizayn va IT sohasidagi eng talabgir yo‘nalishlarni o‘rgatishga qaratilgan.
+
+Bizning maqsadimiz
+IT sohasida mukammal bilim va amaliy tajribaga ega bo‘lgan mutaxassislarni tayyorlash. O‘quvchilarimiz nafaqat nazariy bilim oladi, balki real loyihalar ustida ishlash orqali amaliy ko‘nikmalarga ham ega bo‘ladilar.
+
+Bizning afzalliklarimiz
+✅ Tajribali mentorlar – IT sohasi bo‘yicha katta tajribaga ega ustozlar.
+✅ Zamonaviy dasturlar – O‘quv kurslari eng so‘nggi texnologiyalar va talablar asosida tuzilgan.
+✅ Amaliy mashg‘ulotlar – O‘quvchilar har bir darsda o‘z bilimlarini mustahkamlash imkoniyatiga ega.
+✅ Ishga joylashish imkoni – Eng yaxshi o‘quvchilarimizga IT kompaniyalarga ishga joylashishda yordam beramiz.
+✅ Qulay o‘quv muhiti – IT sohasiga mos jihozlangan zamonaviy o‘quv xonalari.
+
+Bizning kurslarimiz
+💻 Dasturlash: Python, JavaScript, Java, C++, PHP, Django, React, Node.js
+🎨 Grafik va UI/UX dizayn: Photoshop, Figma, Illustrator
+📊 Ma’lumotlar bazasi va Sun’iy intellekt: SQL, Data Science, Machine Learning
+🔒 Kiberxavfsizlik va DevOps: Linux, Ethical Hacking, AWS, Docker
+                    {% endblocktrans %}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="courseInc">
+    <div class="container">
+        <div class="container2">
+            <div class="courseInc-item">
+                <h2 class="sectionTheme">{% trans "Bizning natijalarimiz" %}</h2>
+                <div class="courseInc-item__blocks">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="block">
+                                <h2>420+</h2>
+                                <p>{% trans "bitiruvchilar" %}</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="block">
+                                <h2>8+</h2>
+                                <p>{% trans "kurslar" %}</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="block">
+                                <h2>3</h2>
+                                <p>{% trans "filiallar" %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="openLesForm">
+    <div class="container">
+        <div class="container2">
+            <div class="openLesForm-item">
+                <h2 class="sectionTheme">{% trans "Bepul ochiq darsimizga yoziling" %}</h2>
+                <p class="sectionText"> {% trans "Har bir kurs boshlanishidan oldin bepul ochiq darslar o'tkaziladi, unda siz ta'lim jarayoni haqida batafsil ma'lumot olasiz, o‘qituvchi bilan tanishasiz va kursga yozilishingiz mumkin." %}
+                </p>
+                <div class="openLesForm-item__form">
+                    <form action="{% url 'about' %}" method="post" enctype="multipart/form-data">
+
+                        <div>
+                            <label for="name">
+                                <p>{% trans "Ism familiya:" %}</p>
+                                {{form.fullname}}
+                                {% if form.fullname.errors %}
+                                <div class="text-danger">
+                                    {{ form.fullname.errors.0 }}
+                                </div>
+                                {% endif %}
+                            </label>
+                            <label for="">
+                                <p>{% trans "Telefon raqam:" %}</p>
+                                {{form.phone}}
+                                {% if form.phone.errors %}
+                                <div class="text-danger">
+                                    {{ form.phone.errors.0 }}
+                                </div>
+                                {% endif %}
+                            </label>
+                        </div>
+                        <div>
+                            <p>{% trans "Sizning so‘rovingiz:" %}</p>
+                            {{form.question}}
+                            {% if form.question.errors %}
+                            <div class="text-danger">
+                                {{ form.question.errors.0 }}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <button type="submit" class="send">{% trans "Yuborish" %}</button>
+                        {% csrf_token %}
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var videoModal = document.getElementById("videoModal");
+    var videoFrame = document.getElementById("videoFrame");
+
+    videoModal.addEventListener("show.bs.modal", function (event) {
+        var button = event.relatedTarget; // Tugmani olamiz
+        var videoUrl = button.getAttribute("data-video-url"); // Video URL
+        videoFrame.src = videoUrl + "?autoplay=1"; // Avtomatik o‘ynash qo‘shiladi
+    });
+
+    videoModal.addEventListener("hidden.bs.modal", function () {
+        videoFrame.src = ""; // Modal yopilganda videoni to‘xtatish
+    });
+});
+</script>
+{% endblock %}

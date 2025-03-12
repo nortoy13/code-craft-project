@@ -1,0 +1,68 @@
+{% extends 'codecraftapp/base.html' %}
+{% load i18n %}
+
+{% block title %}
+News Detail
+{% endblock %}
+
+
+{% block content %}
+<section class="pageHeader">
+        <div class="container">
+            <div class="pageHeader-item">
+                <ul>
+                    <li><a href="{% url 'home' %}"> <span>{% trans "Asosiy sahifa" %}</span> <i class="icon-bottom"></i></a></li>
+                    <li><a href="#"> <span>{% trans "Yangiliklar" %}</span> <i class="icon-bottom"></i></a></li>
+                </ul>
+                <h1>{% trans "Yangiliklar" %}</h1>
+            </div>
+        </div>
+    </section>
+<section class="newsInner">
+        <div class="container">
+            <div class="container2">
+                <div class="newsInner-item">
+                    <div>
+                        <p><i class="icon-instagram"></i> <span>{{news.created_time}}</span></p>
+                        <p><i class="icon-instagram"></i> <span>12</span></p>
+                    </div>
+                    <h1>{{news.title}}</h1>
+                    <div class="image">
+                        <img src="{{news.photo.url}}" alt="404">
+                    </div>
+                    <p>
+                        {{news.content|linebreaksbr|safe}}
+                    </p>
+                    <div class="newsInner-item__block">
+                        <h2>{% trans "Boshqa yangiliklar" %}</h2>
+                        <div class="row">
+                            {% for n in other_news %}
+                            {% if n.id != news.id %}
+                            <div class="col-4">
+                                <a href="{{n.get_absolute_url}}">
+                                    <div class="block">
+                                        <div class="image">
+                                            <img src="{{n.photo.url}}" alt="{{n.title}} photo">
+                                        </div>
+                                        <div class="block__content">
+                                            <h2>{{n.title}}</h2>
+                                            <p>
+                                                {{n.content|truncatechars:185}}
+                                            </p>
+                                            <div>
+                                                <p><i class="icon-instagram"></i> <span>{{n.created_time|date:"d.m.Y"}}</span></p>
+                                                <!--<p><i class="icon-instagram"></i> <span>12</span></p>-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+{% endblock %}

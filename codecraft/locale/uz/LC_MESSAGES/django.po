@@ -1,0 +1,507 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-12 16:23+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: uz\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: codecraft/settings.py:116
+msgid "O‘zbek"
+msgstr "Uzbek"
+
+#: codecraft/settings.py:117
+msgid "Русский"
+msgstr "Russian"
+
+#: codecraft/settings.py:118
+msgid "English"
+msgstr "English"
+
+#: codecraftapp/models.py:152
+msgid "Dushanba"
+msgstr ""
+
+#: codecraftapp/models.py:153
+msgid "Seshanba"
+msgstr ""
+
+#: codecraftapp/models.py:154
+msgid "Chorshanba"
+msgstr ""
+
+#: codecraftapp/models.py:155
+msgid "Payshanba"
+msgstr ""
+
+#: codecraftapp/models.py:156
+msgid "Juma"
+msgstr ""
+
+#: codecraftapp/models.py:157
+msgid "Shanba"
+msgstr ""
+
+#: codecraftapp/models.py:158
+msgid "Yakshanba"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/about.html:16
+#: codecraftapp/templates/codecraftapp/contact.html:15
+#: codecraftapp/templates/codecraftapp/courses.html:14
+#: codecraftapp/templates/codecraftapp/news.html:14
+#: codecraftapp/templates/codecraftapp/newsInner.html:14
+#: codecraftapp/templates/codecraftapp/projects.html:15
+msgid "Asosiy sahifa"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/about.html:17
+msgctxt "menu"
+msgid "Biz haqimizda"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/about.html:19
+msgctxt "heading"
+msgid "Biz haqimizda"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/about.html:63
+msgid ""
+"\n"
+"                    Biz haqimizda\n"
+"Codecraft IT o‘quv markazi – bu zamonaviy texnologiyalar bo‘yicha sifatli "
+"ta’lim berishga ixtisoslashgan markaz bo‘lib, dasturlash, dizayn va IT "
+"sohasidagi eng talabgir yo‘nalishlarni o‘rgatishga qaratilgan.\n"
+"\n"
+"Bizning maqsadimiz\n"
+"IT sohasida mukammal bilim va amaliy tajribaga ega bo‘lgan mutaxassislarni "
+"tayyorlash. O‘quvchilarimiz nafaqat nazariy bilim oladi, balki real "
+"loyihalar ustida ishlash orqali amaliy ko‘nikmalarga ham ega bo‘ladilar.\n"
+"\n"
+"Bizning afzalliklarimiz\n"
+"✅ Tajribali mentorlar – IT sohasi bo‘yicha katta tajribaga ega ustozlar.\n"
+"✅ Zamonaviy dasturlar – O‘quv kurslari eng so‘nggi texnologiyalar va "
+"talablar asosida tuzilgan.\n"
+"✅ Amaliy mashg‘ulotlar – O‘quvchilar har bir darsda o‘z bilimlarini "
+"mustahkamlash imkoniyatiga ega.\n"
+"✅ Ishga joylashish imkoni – Eng yaxshi o‘quvchilarimizga IT kompaniyalarga "
+"ishga joylashishda yordam beramiz.\n"
+"✅ Qulay o‘quv muhiti – IT sohasiga mos jihozlangan zamonaviy o‘quv "
+"xonalari.\n"
+"\n"
+"Bizning kurslarimiz\n"
+"💻 Dasturlash: Python, JavaScript, Java, C++, PHP, Django, React, Node.js\n"
+"🎨 Grafik va UI/UX dizayn: Photoshop, Figma, Illustrator\n"
+"📊 Ma’lumotlar bazasi va Sun’iy intellekt: SQL, Data Science, Machine "
+"Learning\n"
+"🔒 Kiberxavfsizlik va DevOps: Linux, Ethical Hacking, AWS, Docker\n"
+"                    "
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/about.html:92
+msgid "Bizning natijalarimiz"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/about.html:98
+msgid "bitiruvchilar"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/about.html:104
+msgid "kurslar"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/about.html:110
+msgid "filiallar"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/about.html:123
+#: codecraftapp/templates/codecraftapp/courses.html:249
+msgid "Bepul ochiq darsimizga yoziling"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/about.html:124
+#: codecraftapp/templates/codecraftapp/courses.html:211
+#: codecraftapp/templates/codecraftapp/courses.html:250
+msgid ""
+"Har bir kurs boshlanishidan oldin bepul ochiq darslar o'tkaziladi, unda siz "
+"ta'lim jarayoni haqida batafsil ma'lumot olasiz, o‘qituvchi bilan tanishasiz "
+"va kursga yozilishingiz mumkin."
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/about.html:131
+#: codecraftapp/templates/codecraftapp/contact.html:34
+#: codecraftapp/templates/codecraftapp/courses.html:255
+msgid "Ism familiya:"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/about.html:140
+#: codecraftapp/templates/codecraftapp/contact.html:44
+#: codecraftapp/templates/codecraftapp/courses.html:264
+msgid "Telefon raqam:"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/about.html:150
+#: codecraftapp/templates/codecraftapp/courses.html:274
+msgid "Sizning so‘rovingiz:"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/about.html:158
+#: codecraftapp/templates/codecraftapp/contact.html:70
+#: codecraftapp/templates/codecraftapp/courses.html:282
+msgid "Yuborish"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/base.html:56
+msgid ""
+"\n"
+"                    Ijtimoiy tarmoqlar:\n"
+"                    "
+msgstr ""
+"\n"
+"                    Ijtimoiy tarmoqlar:\n"
+"                    "
+
+#: codecraftapp/templates/codecraftapp/base.html:84
+#: codecraftapp/templates/codecraftapp/courses.html:16
+msgid "Kurslar"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/base.html:97
+msgid "Biz haqimizda"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/base.html:98
+#: codecraftapp/templates/codecraftapp/news.html:15
+#: codecraftapp/templates/codecraftapp/news.html:17
+#: codecraftapp/templates/codecraftapp/newsInner.html:15
+#: codecraftapp/templates/codecraftapp/newsInner.html:17
+msgid "Yangiliklar"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/base.html:99
+#: codecraftapp/templates/codecraftapp/projects.html:16
+#: codecraftapp/templates/codecraftapp/projects.html:18
+msgid "Loyihalar"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/base.html:100
+#: codecraftapp/templates/codecraftapp/base.html:141
+msgid "Aloqa"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/base.html:103
+msgctxt "nav"
+msgid "Ariza qoldirish"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/base.html:148
+msgid "Manzil"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/base.html:150
+msgid ""
+"171-mabtab, 20-kabinet, Buyuk Ipak Yo`li, 153. Mo`ljal: Sayohat mehmonhonasi"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/base.html:156
+msgctxt "footer"
+msgid "Ariza qoldirish"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/base.html:157
+msgid "Ish vaqtlari: 10:00 - 20:00"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/base.html:163
+msgid "Muhabbat bilan 💛 Codecraft ©"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:16
+msgctxt "menu"
+msgid "Aloqa"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:18
+msgctxt "heading"
+msgid "Aloqa"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:26
+#: codecraftapp/templates/codecraftapp/home.html:19
+msgid "Ariza qoldirish"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:28
+msgid "Ushbu ma’lumotlarni to‘ldiring"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:53
+msgid "Email:"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:62
+msgid "Yo‘nalish"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:78
+msgid "Telefon:"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:84
+msgid "Ish vaqtlari:"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:85
+msgid "Dush-Jum:"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:86
+msgid "Shan-Yak:"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:90
+msgid "Ijtimoy tarmoqlar:"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:104
+msgid "1-Filial"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:105
+msgid "241-maktab, 6-xona, Salom ko‘chasi 1."
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:106
+msgid "Mo‘ljal: Salom choyxonasi"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:110
+msgid "2-Filial:"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:111
+msgid "171-maktab, 20-xona, Buyuk Ipak Yo‘li 153."
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:112
+msgid "Mo‘ljal: Sayohat mehmonxonasi"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:115
+msgid "3-Filial:"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:116
+msgid "INHA, B bloki, 204-xona."
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/contact.html:117
+msgid "Ziyolilar, 9a Buz-1 MFY, Mirzo Ulug‘bek tumani."
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/courses.html:64
+msgid "Kurs haqida batafsil"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/courses.html:76
+msgid "Kurs o`z ichiga oladi"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/courses.html:82
+msgid "Darslar"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/courses.html:88
+msgid "Amaliyot"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/courses.html:94
+msgid "Portfolio uchun ishlar"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/courses.html:107
+msgid "Kurs dasturi"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/courses.html:123
+msgid "Kurs narxlari"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/courses.html:125
+msgid ""
+"O‘quv oyi 8 ta darsdan iborat. To‘lov mashg‘ulotlar boshlanishidan oldin "
+"amalga oshiriladi."
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/courses.html:153
+msgid "Tez-tez beriladigan savollar"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/courses.html:154
+msgid ""
+"O‘quvchilarimiz tomonidan eng ko‘p beriladigan savollarga javoblarni ushbu "
+"bo‘limda topishingiz mumkin. Agar sizni qiziqtirgan savol bo‘lsa, biz bilan "
+"bog‘laning!"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/courses.html:181
+msgid "Kurs natijalari"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/courses.html:183
+msgid ""
+"Har bir kurs davomida o‘quvchilar nazariy bilimlarni o‘zlashtirish bilan "
+"birga, amaliy loyihalar ustida ham ishlaydilar. Dasturlash kurslarida real "
+"ilovalar yaratish, dizayn kurslarida esa grafik va UI/UX loyihalar ishlab "
+"chiqish mashg‘ulotlari o‘tkaziladi. Kurs yakunida esa bitiruvchilar tayyor "
+"portfolio va sertifikatga ega bo‘ladilar."
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/courses.html:210
+msgid "Ochiq darslar"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:14
+msgid "Code Craft IT kasblarini o`rgatish maskani"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:16
+msgid ""
+"Codecraft ta’lim maskani orqali siz IT kasblarini belgilangan muddat orqali "
+"0 dan mukammal darajagacha o‘rganishingiz mumkin."
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:20
+msgid "Biz haqimizda ko‘proq"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:36
+msgid "Bitiruvchilar"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:40
+msgid "Trening soatlari"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:44
+msgid "Mutaxasisslar"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:54
+msgid "Nima uchun Codecraft?"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:56
+msgid ""
+"O‘quv markazlar orasidan nima uchun aynan Codecraft o‘quv markazini "
+"tanlashingiz uchun 4 sababni keltirib o‘tamiz."
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:63
+msgid "Eng zo'r o'qituvchilar"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:64
+msgid ""
+"Bizning tajribali o‘qituvchilarimiz o‘z sohasida yetakchi bo‘lib, har bir "
+"o‘quvchiga individual yondashadi."
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:70
+msgid "Amaliy mashg'ulotlar"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:71
+msgid ""
+"O‘quvchilar nazariy bilimlarni mustahkamlash uchun real loyihalar ustida "
+"ishlash imkoniyatiga ega bo‘ladilar."
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:77
+msgid "Sertifikat va portfolio"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:78
+msgid ""
+"Kurs yakunida siz rasmiy sertifikat hamda mustaqil ishlagan loyihalaringiz "
+"bilan to‘ldirilgan portfolio olasiz."
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:84
+msgid "Doimiy qo‘llab-quvvatlash"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:85
+msgid ""
+"Bizning mutaxassislarimiz sizga kurs davomida ham, undan keyin ham yordam "
+"berishga tayyor."
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:98
+msgid "Aktual kurslar"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:100
+msgid ""
+"Bizning eng so‘nggi va dolzarb kurslarimiz bilan tanishing. Hozirgi talab "
+"yuqori bo‘lgan kasblarni o‘rganing va kelajagingizga mustahkam poydevor "
+"yarating."
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:122
+msgid "Batafsil"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:135
+msgid "Qulay holatda ta’lim"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:137
+msgid ""
+"Siz istalgan joyda va qulay vaqtda ta’lim olishingiz mumkin. Onlayn va "
+"oflayn darslar, zamonaviy metodikalar va interaktiv mashg‘ulotlar siz uchun!"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:164
+msgid "Biz kimmiz?"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:166
+msgid "Video orqali barcha savollaringizga javob olasiz!"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:181
+msgid "Izohlar"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:183
+msgid ""
+"Bizning o‘quvchilarimizning fikr-mulohazalari va izohlari bilan tanishing. "
+"Ular kurslarimiz haqidagi tajribalarini bo‘lishadilar!"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:242
+msgid "O‘quvchilarimiz qayerda ishlashadi?"
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/home.html:244
+msgid ""
+"Bizning bitiruvchilarimiz yirik IT kompaniyalarda, startaplarga asos solib "
+"yoki frilanser sifatida faoliyat yuritishadi. Ular o‘z bilimlarini amalda "
+"qo‘llab, muvaffaqiyatli martaba qurmoqdalar."
+msgstr ""
+
+#: codecraftapp/templates/codecraftapp/newsInner.html:37
+msgid "Boshqa yangiliklar"
+msgstr ""

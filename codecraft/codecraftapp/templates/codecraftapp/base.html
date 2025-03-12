@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'assets/fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/FirsNeue/stylesheet.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/libs/OwlCarousel/dist/assets/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/libs/OwlCarousel/dist/assets/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+
+</head>
+
+<body>
+<section class="header">
+    <div class="container">
+        <div class="header-top">
+            <div class="header-top_lang">
+                <ul>
+                    <li>
+                        <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="language" value="ru">
+                            <button type="submit" class="{% if request.LANGUAGE_CODE == 'ru' %}active{% endif %}">Рус</button>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="language" value="uz">
+                            <button type="submit" class="{% if request.LANGUAGE_CODE == 'uz' %}active{% endif %}">Uzb</button>
+                        </form>
+                    </li>
+                    <li>
+                        <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
+                            <input type="hidden" name="language" value="en">
+                            <button type="submit" class="{% if request.LANGUAGE_CODE == 'en' %}active{% endif %}">Eng</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-top_social">
+                <p>
+                    {% blocktrans %}
+                    Ijtimoiy tarmoqlar:
+                    {% endblocktrans %}
+                </p>
+                <ul>
+                    <li><a href="https://www.instagram.com/codecraft.uz/"><i class="icon-instagram"></i></a>
+                    </li>
+                    <li><a href="https://t.me/codecraftuz"><i class="icon-telegram"></i></a></li>
+                    <li>
+                        <a href="https://www.youtube.com/@codingacademyintashkent3220"><i
+                                class="icon-youtube"></i></a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=998993005500"><i class="fa-brands fa-whatsapp"></i></a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <div class="header-bottom_left">
+                <a href="{% url 'home' %}" class="header-bottom_logo">
+                    <img src="{% static '/image/logo.png' %}" alt="">
+                </a>
+                <!--                <button class="header-bottom_courses"> Kurslar-->
+                <!--                    <i class="icon-bottom"></i>-->
+                <!--                </button>-->
+                <div class="dropdown">
+                    <a class="header-bottom_courses dropdown-toggle" type="button" id="courseDropdown"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        {% trans 'Kurslar' %}
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="courseDropdown">
+                        {% for course in courses %}
+                        <li><a class="dropdown-item" href="{{ course.get_absolute_url }}">{{ course.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+            </div>
+            <div class="header-bottom_right">
+                <div class="header-bottom_menu">
+                    <ul>
+                        <li><a href="{% url 'about' %}">{% trans 'Biz haqimizda' %} </a></li>
+                        <li><a href="{% url 'news' %}"> {% trans 'Yangiliklar' %} </a></li>
+                        <li><a href="{% url 'projects' %}"> {% trans 'Loyihalar' %} </a></li>
+                        <li><a href="{% url 'contact' %}"> {% trans 'Aloqa' %} </a></li>
+                    </ul>
+                </div>
+                <a href="{% url 'contact' %}" class="application-btn"> {% trans 'Ariza qoldirish' context 'nav' %} <i
+                        class="icon-right"></i> </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% block content %}
+
+{% endblock %}
+
+<section class="footer">
+    <div class="container">
+        <div class="footer-item">
+            <div class="footer-item__top">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="footer-logoSocial">
+                            <div class="logo">
+                                <img src="{% static '/image/logo.png' %}" alt="">
+                            </div>
+                            <div class="social">
+                                <ul>
+                                    <li><a href="https://www.instagram.com/codecraft.uz/"><i class="icon-instagram"></i></a>
+                                    </li>
+                                    <li><a href="https://t.me/codecraftuz"><i class="icon-telegram"></i></a></li>
+                                    <li>
+                                        <a href="https://www.youtube.com/@codingacademyintashkent3220"><i
+                                                class="icon-youtube"></i></a></li>
+                                    <li><a href="https://api.whatsapp.com/send?phone=998993005500"><i
+                                            class="fa-brands fa-whatsapp"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="footer-contact">
+                            <h3>{% trans 'Aloqa' %}</h3>
+                            <a href="tel:+998907485474">+998 90 748 54-74</a>
+                            <a href="tel:+998907485474">+998 90 748 54-74</a>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="footer-address">
+                            <h3>{% trans 'Manzil' %}</h3>
+                            <p>
+                                {% trans '171-mabtab, 20-kabinet, Buyuk Ipak Yo`li, 153. Mo`ljal: Sayohat mehmonhonasi'%}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="footer-application">
+                            <a href="{% url 'contact' %}" class="application-btn">{% trans 'Ariza qoldirish' context 'footer' %} <i class="icon-right"></i></a>
+                            <p>{% trans 'Ish vaqtlari: 10:00 - 20:00' %}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-item__bottom">
+                <p>{% trans 'Muhabbat bilan 💛 Codecraft ©' %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="{% static 'assets/libs/jquery/popper.min.js' %}"></script>
+<script src="{% static 'assets/libs/jquery/jquery-3.3.1.slim.min.js' %}"></script>
+<script src="{% static 'assets/libs/OwlCarousel/dist/owl.carousel.min.js' %}"></script>
+<script src="{% static '/js/index.js' %}"></script>
+
+
+</html>

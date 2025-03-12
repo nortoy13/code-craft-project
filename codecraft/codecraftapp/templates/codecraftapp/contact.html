@@ -1,0 +1,123 @@
+{% extends 'codecraftapp/base.html' %}
+{% load i18n %}
+
+
+{% block title %}
+Contact
+{% endblock %}
+
+
+{% block content %}
+<section class="pageHeader">
+    <div class="container">
+        <div class="pageHeader-item">
+            <ul>
+                <li><a href="{% url 'home' %}"> <span>{% trans "Asosiy sahifa" %}</span> <i class="icon-bottom"></i></a></li>
+                <li><a href="#"> <span>{% trans "Aloqa" context 'menu' %}</span> <i class="icon-bottom"></i></a></li>
+            </ul>
+            <h1>{% trans "Aloqa" context 'heading' %}</h1>
+        </div>
+    </div>
+</section>
+<section class="contact">
+    <div class="container">
+        <div class="gap"></div>
+        <div class="contact-form">
+            <h2 class="contact-form__title">{% trans "Ariza qoldirish" %}</h2>
+            <p class="contact-form__description">
+                {% trans "Ushbu ma’lumotlarni to‘ldiring" %}
+            </p>
+            <form action="{% url 'contact' %}" class="form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <label for="">
+                    {% trans "Ism familiya:" %}
+                    <!--                    <input type="text" placeholder="Yozing"/>-->
+                    {{form.fullname}}
+                    {% if form.fullname.errors %}
+                    <div class="text-danger">
+                        {{ form.fullname.errors.0 }}
+                    </div>
+                    {% endif %}
+                </label>
+                <label for="">
+                    {% trans "Telefon raqam:" %}
+                    {{form.phone}}
+                    {% if form.phone.errors %}
+                    <div class="text-danger">
+                        {{ form.phone.errors.0 }}
+                    </div>
+                    {% endif %}
+                </label>
+                <label for="">
+                    {% trans "Email:" %}
+                    {{form.email}}
+                    {% if form.email.errors %}
+                    <div class="text-danger">
+                        {{ form.email.errors.0 }}
+                    </div>
+                    {% endif %}
+                </label>
+                <label for="">
+                    {% trans "Yo‘nalish" %}
+                    {{form.category}}
+                    {% if form.category.errors %}
+                    <div class="text-danger">
+                        {{ form.category.errors.0 }}
+                    </div>
+                    {% endif %}
+                </label>
+                <button type="submit" class="submit-btn">{% trans "Yuborish" %}</button>
+            </form>
+
+
+        </div>
+
+        <div class="card-wrap">
+            <div class="card">
+                <h4 class="card__title">{% trans "Telefon:" %}</h4>
+                <a href="tel:+998 99300 55 00">+998 99300 55 00</a>
+                <a href="tel:+998 99584 55 51">+998 99584 55 51</a>
+            </div>
+
+            <div class="card">
+                <h4 class="card__title">{% trans "Ish vaqtlari:" %}</h4>
+                <p>{% trans "Dush-Jum:" %} 10:00-20:00</p>
+                <p>{% trans "Shan-Yak:" %} 11:00-20:00</p>
+            </div>
+
+            <div class="card">
+                <h4 class="card__title">{% trans "Ijtimoy tarmoqlar:" %}</h4>
+                <div class="footer-logoSocial">
+                    <div class="social">
+                        <ul>
+                            <li><a href="https://www.instagram.com/codecraft.uz/"><i class="icon-instagram"></i></a></li>
+                            <li><a href="https://t.me/codecraftuz"><i class="icon-telegram"></i></a></li>
+                            <li><a href="https://www.youtube.com/@codingacademyintashkent3220"><i class="icon-youtube"></i></a></li>
+                            <li><a href="https://api.whatsapp.com/send?phone=998993005500"><i class="fa-brands fa-whatsapp"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h4 class="card__title">{% trans "1-Filial" %}:</h4>
+                <p>{% trans "241-maktab, 6-xona, Salom ko‘chasi 1." %}</p>
+                <p>{% trans "Mo‘ljal: Salom choyxonasi" %}</p>
+            </div>
+
+            <div class="card">
+                <h4 class="card__title">{% trans "2-Filial:" %}</h4>
+                <p>{% trans "171-maktab, 20-xona, Buyuk Ipak Yo‘li 153." %}</p>
+                <p>{% trans "Mo‘ljal: Sayohat mehmonxonasi" %}</p>
+            </div>
+            <div class="card">
+                <h4 class="card__title">{% trans "3-Filial:" %}</h4>
+                <p>{% trans "INHA, B bloki, 204-xona." %}</p>
+                <p>{% trans "Ziyolilar, 9a Buz-1 MFY, Mirzo Ulug‘bek tumani." %}</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,266 @@
+{% extends 'codecraftapp/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<section class="banner">
+    <div class="container">
+        <div class="banner-item">
+            <div class="banner-item__text">
+                <h1>{% trans "Code Craft IT kasblarini o`rgatish maskani" %}</h1>
+                <p>
+                    {% trans "Codecraft ta’lim maskani orqali siz IT kasblarini belgilangan muddat orqali 0 dan mukammal darajagacha o‘rganishingiz mumkin." %}
+                </p>
+                <div class="banner-item__btn">
+                    <a href="{% url 'contact' %}" class="application-btn">{% trans "Ariza qoldirish" %}</a>
+                    <a href="{% url 'about' %}" class="about-btn">{% trans "Biz haqimizda ko‘proq" %}</a>
+                </div>
+            </div>
+            <div class="banner-item__image">
+                <img src="{% static '/image/bannerImg.png' %}" alt="404">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="statistics">
+    <div class="container">
+        <div class="statistics-item">
+            <div class="block">
+                <ul>
+                    <li>
+                        <h2>5 024+</h2>
+                        <p>{% trans "Bitiruvchilar" %}</p>
+                    </li>
+                    <li>
+                        <h2>564+</h2>
+                        <p>{% trans "Trening soatlari" %}</p>
+                    </li>
+                    <li>
+                        <h2>20+</h2>
+                        <p>{% trans "Mutaxasisslar" %}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="whyCodecraft">
+    <div class="container">
+        <div class="whyCodecraft-item">
+            <h1 class="sectionTheme">{% trans "Nima uchun Codecraft?" %}</h1>
+            <p class="sectionText">
+                {% trans "O‘quv markazlar orasidan nima uchun aynan Codecraft o‘quv markazini tanlashingiz uchun 4 sababni keltirib o‘tamiz." %}
+            </p>
+            <div class="whyCodecraft-item_blocks">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="block">
+                            <div class="icon"><i class="fas fa-graduation-cap"></i></div>
+                            <h2>{% trans "Eng zo'r o'qituvchilar" %}</h2>
+                            <p>{% trans "Bizning tajribali o‘qituvchilarimiz o‘z sohasida yetakchi bo‘lib, har bir o‘quvchiga individual yondashadi." %}</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="block">
+                            <div class="icon"><i class="fas fa-tools"></i></div>
+                            <h2>{% trans "Amaliy mashg'ulotlar" %}</h2>
+                            <p>{% trans "O‘quvchilar nazariy bilimlarni mustahkamlash uchun real loyihalar ustida ishlash imkoniyatiga ega bo‘ladilar." %}</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="block">
+                            <div class="icon"><i class="fas fa-certificate"></i></div>
+                            <h2>{% trans "Sertifikat va portfolio" %}</h2>
+                            <p>{% trans "Kurs yakunida siz rasmiy sertifikat hamda mustaqil ishlagan loyihalaringiz bilan to‘ldirilgan portfolio olasiz." %}</p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="block">
+                            <div class="icon"><i class="fas fa-handshake"></i></div>
+                            <h2>{% trans "Doimiy qo‘llab-quvvatlash" %}</h2>
+                            <p>{% trans "Bizning mutaxassislarimiz sizga kurs davomida ham, undan keyin ham yordam berishga tayyor." %}</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="courses">
+    <div class="container">
+        <div class="courses-item">
+            <h2 class="sectionTheme">{% trans "Aktual kurslar" %}</h2>
+            <p class="sectionText">
+                {% trans "Bizning eng so‘nggi va dolzarb kurslarimiz bilan tanishing. Hozirgi talab yuqori bo‘lgan kasblarni o‘rganing va kelajagingizga mustahkam poydevor yarating." %}
+            </p>
+            <div class="courses-item__blocks">
+                <div class="row">
+                    {% for c in courses %}
+                    <div class="col-4">
+                        <div class="block">
+                            <div>
+                                <div class="image">
+                                    <img src="{{c.image.url}}" alt="">
+                                </div>
+                                <p class="hashtag">
+                                    {% for tag in c.course_tag.all %}
+                                    <span>#{{ tag.name }}</span>
+                                    {% endfor %}
+                                </p>
+                            </div>
+                            <div>
+                                <h2>{{c.title}}</h2>
+                                <p class="text">
+                                    {{c.description}}
+                                </p>
+                                <a href="{{c.get_absolute_url}}">{% trans "Batafsil" %} <i class="icon-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="convenientEdu">
+    <div class="container">
+        <div class="convenientEdu-item">
+            <h2 class="sectionTheme">{% trans "Qulay holatda ta’lim" %}</h2>
+            <p class="sectionText">
+                {% trans "Siz istalgan joyda va qulay vaqtda ta’lim olishingiz mumkin. Onlayn va oflayn darslar, zamonaviy metodikalar va interaktiv mashg‘ulotlar siz uchun!" %}
+            </p>
+            <div class="convenientEdu-item_blocks">
+                <div class="row">
+                    {% for g in groups %}
+                    <div class="col-3">
+                        <div class="block">
+                            <div class="image">
+                                <img src="{{g.image.url}}" alt="">
+                            </div>
+                            <div class="content">
+                                <h2>{{g.name}}</h2>
+                                <p>
+                                    {{g.content}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="whoWe">
+    <div class="container">
+        <div class="whoWe-item">
+            <h2 class="sectionTheme">{% trans "Biz kimmiz?" %}</h2>
+            <p class="sectionText">
+                {% trans "Video orqali barcha savollaringizga javob olasiz!" %}
+            </p>
+
+            <div class="whoWe-item__video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/s3EyW4UIHLo"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="comment">
+    <div class="container">
+        <div class="comment-item">
+            <h2 class="sectionTheme">{% trans "Izohlar" %}</h2>
+            <p class="sectionText">
+                {% trans "Bizning o‘quvchilarimizning fikr-mulohazalari va izohlari bilan tanishing. Ular kurslarimiz haqidagi tajribalarini bo‘lishadilar!" %}
+            </p>
+
+            <div class="comment-item__carousel">
+                <div>
+                    <div id="commentCarousel" class="owl-carousel owl-theme">
+                        {% for t in testimonials %}
+                        <div class="item">
+                            <div class="block">
+                                <div class="block-top">
+                                    <div class="image">
+                                        <img src="{{t.photo.url}}" alt="">
+                                    </div>
+                                    <div class="name">
+                                        <h2>{{t.name}}</h2>
+                                        <p>{{t.subject}}</p>
+                                    </div>
+                                </div>
+                                <div class="block-content">
+                                    <p>
+                                        {{t.text}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div>
+                    <div id="commentCarousel2" class="owl-carousel owl-theme">
+                        {% for t in testimonials %}
+                        <div class="item">
+                            <div class="block">
+                                <div class="block-top">
+                                    <div class="image">
+                                        <img src="{{t.photo.url}}" alt="">
+                                    </div>
+                                    <div class="name">
+                                        <h2>{{t.name}}</h2>
+                                        <p>{{t.subject}}</p>
+                                    </div>
+                                </div>
+                                <div class="block-content">
+                                    <p>
+                                        {{t.text}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="studentsWork">
+    <div class="container">
+        <div class="studentsWork-item">
+            <h2 class="sectionTheme">{% trans "O‘quvchilarimiz qayerda ishlashadi?" %}</h2>
+            <p class="sectionText">
+                {% trans "Bizning bitiruvchilarimiz yirik IT kompaniyalarda, startaplarga asos solib yoki frilanser sifatida faoliyat yuritishadi. Ular o‘z bilimlarini amalda qo‘llab, muvaffaqiyatli martaba qurmoqdalar." %}
+            </p>
+
+            <div class="studentsWork-item__carousel">
+                <div id="workCarousel" class="owl-carousel owl-theme">
+                    <div class="item">
+                        <img src="{% static '/image/Apple.png' %}" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="{% static '/image/Netflix.png' %}" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="{% static '/image/Apple.png' %}" alt="">
+                    </div>
+                    <div class="item">
+                        <img src="{% static '/image/Netflix.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

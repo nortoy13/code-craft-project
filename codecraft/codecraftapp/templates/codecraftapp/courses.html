@@ -1,0 +1,306 @@
+{% extends 'codecraftapp/base.html' %}
+{% load i18n %}
+
+{% block title %}
+Courses
+{% endblock %}
+
+
+{% block content %}
+<section class="pageHeader">
+    <div class="container">
+        <div class="pageHeader-item">
+            <ul>
+                <li><a href="{% url 'home' %}"> <span>{% trans "Asosiy sahifa" %}</span> <i class="icon-bottom"></i></a>
+                </li>
+                <li><a href="#"> <span>{% trans "Kurslar" %}</span> <i class="icon-bottom"></i></a></li>
+                <li><a href="#"> <span>{{course.title}}</span> <i class="icon-bottom"></i></a></li>
+            </ul>
+            <h1>{{course.title}}</h1>
+        </div>
+    </div>
+</section>
+<section class="pageVideo">
+    <div class="container">
+        <div class="container2">
+            <div class="pageVideo-item">
+                <!--                <a href="{{course.video_url}}" class="video">-->
+                <!--                    <div class="image">-->
+                <!--                        <img src="{{course.video_photo.url}}" alt="">-->
+                <!--                    </div>-->
+                <!--                    <div class="video__play">-->
+                <!--                        <div><i class="icon-play"></i></div>-->
+                <!--                    </div>-->
+                <!--                </a>-->
+
+                <a href="#" class="video" data-bs-toggle="modal" data-bs-target="#videoModal"
+                   data-video-url="https://www.youtube.com/embed/{{ course.video_url|slice:'-11:' }}">
+                    <div class="image">
+                        <img src="{{ course.video_photo.url }}" alt="">
+                    </div>
+                    <div class="video__play">
+                        <div><i class="icon-play"></i></div>
+                    </div>
+                </a>
+
+                <!-- Modal oyna -->
+                <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel"
+                     aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" style="max-width: 900px; width: 90%;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="videoModalLabel">Video</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <iframe id="videoFrame" style="width: 100%; height: 500px;" src="" frameborder="0"
+                                        allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>{% trans "Kurs haqida batafsil" %}</h2>
+                <p>
+                    {{course.description|linebreaks}}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="courseInc">
+    <div class="container">
+        <div class="container2">
+            <div class="courseInc-item">
+                <h2 class="sectionTheme">{% trans "Kurs o`z ichiga oladi" %}</h2>
+                <div class="courseInc-item__blocks">
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="block">
+                                <h2>{{course.lessons}}</h2>
+                                <p>{% trans "Darslar" %}</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="block">
+                                <h2>{{course.practice}}</h2>
+                                <p>{% trans "Amaliyot" %}</p>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="block">
+                                <h2>{{course.portfolio_projects}}</h2>
+                                <p>{% trans "Portfolio uchun ishlar" %}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="courseProg">
+    <div class="container">
+        <div class="container2">
+            <div class="courseProg-item">
+                <h2 class="sectionTheme">{% trans "Kurs dasturi" %}</h2>
+                {% for line in course.course_program.splitlines %}
+                <p class="sectionText">{{ line }}</p>
+                {% endfor %}
+
+                <div class="courseProg-item__blocks">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="coursePrice">
+    <div class="container">
+        <div class="container2">
+            <div class="coursePrice-item">
+                <h2 class="sectionTheme">{% trans "Kurs narxlari" %}</h2>
+                <p class="sectionText">
+                    {% trans "O‘quv oyi 8 ta darsdan iborat. To‘lov mashg‘ulotlar boshlanishidan oldin amalga oshiriladi." %}
+                </p>
+                <div class="coursePrice-item__blocks">
+                    <div class="row">
+                        {% for p in prices %}
+                        <div class="col-4">
+                            <div class="block">
+                                <p>Guruh darslari {{p.type}}</p>
+                                <h2>{{p.price}} so`m</h2>
+                                <p>
+                                    {{p.content}}
+                                </p>
+                                <p>
+                                    {{p.body}}
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="faq">
+    <div class="container">
+        <div class="container2">
+            <div class="faq-item">
+                <h2 class="sectionTheme">{% trans "Tez-tez beriladigan savollar" %}</h2>
+                <p class="sectionText">{% trans "O‘quvchilarimiz tomonidan eng ko‘p beriladigan savollarga javoblarni ushbu bo‘limda topishingiz mumkin. Agar sizni qiziqtirgan savol bo‘lsa, biz bilan bog‘laning!" %}</p>
+                <div class="accordion" id="accordionExample">
+                    {% for f in faqs %}
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                {{f.question}}
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                             data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                {{f.answer}}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="courseRes">
+    <div class="container">
+        <div class="container2">
+            <div class="courseRes-item">
+                <h2 class="sectionTheme"> {% trans "Kurs natijalari" %} </h2>
+                <p class="sectionText">
+                    {% trans "Har bir kurs davomida o‘quvchilar nazariy bilimlarni o‘zlashtirish bilan birga, amaliy loyihalar ustida ham ishlaydilar. Dasturlash kurslarida real ilovalar yaratish, dizayn kurslarida esa grafik va UI/UX loyihalar ishlab chiqish mashg‘ulotlari o‘tkaziladi. Kurs yakunida esa bitiruvchilar tayyor portfolio va sertifikatga ega bo‘ladilar." %}
+                </p>
+                <div class="courseRes-item__blocks">
+                    <div id="ourWorks" class="owl-carousel owl-theme">
+                        {% for r in results %}
+                        <div class="item">
+                            <div class="block">
+                                <div class="image">
+                                    <img src="{{r.image.url}}" alt="">
+                                </div>
+                                <div class="block__content">
+                                    <h4>{{r.title}}</h4>
+                                    <p>{{r.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="openLessons">
+    <div class="container">
+        <div class="container2">
+            <div class="openLessons-item">
+                <h2 class="sectionTheme">{% trans "Ochiq darslar" %} </h2>
+                <p class="sectionText">{% trans "Har bir kurs boshlanishidan oldin bepul ochiq darslar o'tkaziladi, unda siz ta'lim jarayoni haqida batafsil ma'lumot olasiz, o‘qituvchi bilan tanishasiz va kursga yozilishingiz mumkin." %}</p>
+                <div class="openLessons-item__blocks">
+                    <div class="row">
+                        {% for o in openLessons %}
+                        <div class="col-4">
+                            <div class="block">
+                                <div class="date">
+                                    <h2>{{o.date|date:"d-F"}}</h2>
+                                    <p><span>{{o.online_or_offline}}</span></p>
+                                </div>
+                                <div class="lessonDays">
+                                    <ul>
+                                        {% for day in o.weekdays %}
+                                        <li>{% trans day|capfirst|slice:":4" %}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="groups">
+                                    <p>Guruhlar:</p>
+                                    <ul>
+                                        {% for t in o.times.all %}
+                                        <li>{{ t.start_time|time:"H:i" }} - {{ t.end_time|time:"H:i" }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="openLesForm">
+    <div class="container">
+        <div class="container2">
+            <div class="openLesForm-item">
+                <h2 class="sectionTheme">{% trans "Bepul ochiq darsimizga yoziling" %}</h2>
+                <p class="sectionText">{% trans "Har bir kurs boshlanishidan oldin bepul ochiq darslar o'tkaziladi, unda siz ta'lim jarayoni haqida batafsil ma'lumot olasiz, o‘qituvchi bilan tanishasiz va kursga yozilishingiz mumkin." %}</p>
+                <div class="openLesForm-item__form">
+                    <form action="{% url 'about' %}" method="post" enctype="multipart/form-data">
+                        <div>
+                            <label for="name">
+                                <p>{% trans "Ism familiya:" %}</p>
+                                {{form.fullname}}
+                                {% if form.fullname.errors %}
+                                <div class="text-danger">
+                                    {{ form.fullname.errors.0 }}
+                                </div>
+                                {% endif %}
+                            </label>
+                            <label for="">
+                                <p>{% trans "Telefon raqam:" %}</p>
+                                {{form.phone}}
+                                {% if form.phone.errors %}
+                                <div class="text-danger">
+                                    {{ form.phone.errors.0 }}
+                                </div>
+                                {% endif %}
+                            </label>
+                        </div>
+                        <div>
+                            <p>{% trans "Sizning so‘rovingiz:" %}</p>
+                            {{form.question}}
+                            {% if form.question.errors %}
+                            <div class="text-danger">
+                                {{ form.question.errors.0 }}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <button type="submit" class="send">{% trans "Yuborish" %}</button>
+                        {% csrf_token %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var videoModal = document.getElementById("videoModal");
+        var videoFrame = document.getElementById("videoFrame");
+
+        videoModal.addEventListener("show.bs.modal", function (event) {
+            var button = event.relatedTarget; // Tugmani olamiz
+            var videoUrl = button.getAttribute("data-video-url"); // Video URL
+            videoFrame.src = videoUrl + "?autoplay=1"; // Avtomatik o‘ynash qo‘shiladi
+        });
+
+        videoModal.addEventListener("hidden.bs.modal", function () {
+            videoFrame.src = ""; // Modal yopilganda videoni to‘xtatish
+        });
+    });
+</script>
+{% endblock %}
