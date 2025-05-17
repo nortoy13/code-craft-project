@@ -5,10 +5,14 @@ Django==5.1.6
 django-modeltranslation==0.19.12
 django-multiselectfield==0.1.13
 django-phonenumber-field==8.0.0
+gunicorn==23.0.0
 idna==3.10
+packaging==25.0
 phonenumbers==8.13.55
 pillow==11.1.0
 polib==1.2.0
+psycopg2-binary==2.9.10
+python-dotenv==1.1.0
 requests==2.32.3
 sqlparse==0.5.3
 urllib3==2.3.0
